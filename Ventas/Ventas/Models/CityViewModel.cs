@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Ventas.Data.Entities
+namespace Ventas.Models
 {
-    public class City
+    public class CityViewModel
     {
         public int Id { get; set; }
 
@@ -10,8 +10,6 @@ namespace Ventas.Data.Entities
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")] // la cantidad maxima de caracteres del campo
         [Required(ErrorMessage = "El campo {0} es obligatorio.")] // que no puede ser un campo null en la base de datos
         public string Name { get; set; }
-
-        public State State { get; set; }
-        public ICollection<User> Users { get; set; }
+        public int StateId { get; set; }
     }
 }

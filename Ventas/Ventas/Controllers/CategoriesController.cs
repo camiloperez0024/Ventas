@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using Ventas.Data;
 using Ventas.Data.Entities;
 
 namespace Ventas.Controllers
 {
+    [Authorize(Roles = "Admin")] // solo los administradores pueden ver las categorias
     public class CategoriesController : Controller
     {
         private readonly DataContext _context;
