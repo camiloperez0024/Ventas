@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Ventas.Data.Entities
 {
@@ -11,6 +12,7 @@ namespace Ventas.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")] // que no puede ser un campo null en la base de datos
         public string Name { get; set; }
 
+        [JsonIgnore]
         public Country Country { get; set; } // relacion de uno a varios
 
         public ICollection<City> Cities { get; set; }
